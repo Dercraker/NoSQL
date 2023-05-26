@@ -15,11 +15,13 @@
 
 
 7. **Clone the Repository:** Use Git to clone the repository by running the following commands in your CLI:
-    > mkdir NoSqll \`
-    > cd .\NoSqll \`
-    > git clone https://github.com/Dercraker/NoSQL.git \`
-    > pnpm install \`
-    > code .
+```bash
+mkdir NoSqll `
+cd .\NoSqll `
+git clone https://github.com/Dercraker/NoSQL.git `
+pnpm install `
+code .
+```
 
 8. **Install Redis Stack on Docker:** Launch DockerHub, then your CLI and run the following command to install Redis stack using Docker:
     > docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
