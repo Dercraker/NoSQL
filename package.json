@@ -1,7 +1,12 @@
 {
-	"dependencies": {
-		"redis": "^4.6.6",
-		"fs": "0.0.1-security",
-		"csv-parser": "^3.0.0"
-	}
+    "scripts": {
+        "start": "node main.js",
+        "dev": "nodemon main.js"
+    },
+    "dependencies": {
+        "csv-parser": "^3.0.0",
+        "fs": "0.0.1-security",
+        "nodemon": "^2.0.22",
+        "redis": "^4.6.6"
+    }
 }

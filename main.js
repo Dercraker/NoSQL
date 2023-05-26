@@ -44,43 +44,43 @@ const main = async () => {
 
 
     //* Import Data from CSV
-    // const dataArray = [];
-    // fs.createReadStream('./contacts_2.csv')
-    //     .pipe(csv())
-    //     .on('data', (data) => {
-    //         const newObj = {
-    //             title: data.title,
-    //             name: data.name,
-    //             address: data.adress,
-    //             realAddress: data.realAdress,
-    //             department: data.departement,
-    //             country: data.country,
-    //             tel: data.tel,
-    //             email: data.email,
-    //         };
+    const dataArray = [];
+    fs.createReadStream('./contacts_2.csv')
+        .pipe(csv())
+        .on('data', (data) => {
+            const newObj = {
+                title: data.title,
+                name: data.name,
+                address: data.adress,
+                realAddress: data.realAdress,
+                department: data.departement,
+                country: data.country,
+                tel: data.tel,
+                email: data.email,
+            };
 
-    //         dataArray.push(newObj);
-    //     })
-    //     .on('end', async () => {
-    //         for (const key in dataArray) {
-    //             if (Object.hasOwnProperty.call(dataArray, key)) {
-    //                 const element = dataArray[key];
-    //                 const fieldValues = Object.entries(element).flat();
-    //                 const hashKey = fieldValues[1].toString() || fieldValues[3].toString();
+            dataArray.push(newObj);
+        })
+        .on('end', async () => {
+            for (const key in dataArray) {
+                if (Object.hasOwnProperty.call(dataArray, key)) {
+                    const element = dataArray[key];
+                    const fieldValues = Object.entries(element).flat();
+                    const hashKey = fieldValues[1].toString() || fieldValues[3].toString();
 
-    //                 try {
-    //                     await client.HSET(key, fieldValues);
-    //                     log(hashKey);
-    //                     log(key);
-    //                 } catch (e) {
-    //                     log(e);
-    //                 }
-    //             }
-    //         }
+                    try {
+                        await client.HSET(key, fieldValues);
+                        log(hashKey);
+                        log(key);
+                    } catch (e) {
+                        log(e);
+                    }
+                }
+            }
 
 
-    //         client.quit();
-    //     });
+            client.quit();
+        });
 
 
 }
