@@ -16,8 +16,8 @@
 
 7. **Clone the Repository:** Use Git to clone the repository by running the following commands in your CLI:
 ```bash
-mkdir NoSqll
-cd .\NoSqll
+mkdir NoSql
+cd .\NoSql
 git clone https://github.com/Dercraker/NoSQL.git
 pnpm install
 code .
